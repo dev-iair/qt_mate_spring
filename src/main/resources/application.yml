@@ -4,10 +4,6 @@ spring:
         driverClassName: org.mariadb.jdbc.Driver
         username: 
         password: 
-    security:
-        user:
-            name: admin
-            password: admin
     devtools:
         livereload:
             enabled: true

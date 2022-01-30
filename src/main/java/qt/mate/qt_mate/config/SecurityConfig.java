@@ -18,7 +18,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                     .and()
                 .authorizeRequests()
-                	.antMatchers("/member").permitAll()
+                	.antMatchers("/*").permitAll()
                 	.anyRequest().authenticated()
                     .and()
                 .formLogin().disable();

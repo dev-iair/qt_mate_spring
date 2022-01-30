@@ -18,7 +18,7 @@ public class MemberController {
         MemberDTO memberDTO = new MemberDTO();
         String name = "이진혁";
         memberDTO = memberService.showMember(name);
-        System.out.println(memberDTO.getName());
+        System.out.println(memberDTO.getPhone());
         return null;
     }
     

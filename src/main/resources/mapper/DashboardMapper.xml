@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="qt.mate.qt_mate.mapper.DashboardMapper">
+	<insert id="addQt">
+		insert into qt (verse) values (#{verse});
+	</insert>
+	<select id="getQt" resultType="QtDTO">
+		select * from qt where date = curdate();
+	</select>
+	<select id="getMyQt" resultType="MyQtDTO">
+		select * from my_qt where date=curdate() and id=#{id};
+	</select>
+	<select id="getMyPrayer" resultType="MyPrayerDTO">
+		select * from my_prayer where date=curdate() and id=#{id};
+	</select>
+</mapper>

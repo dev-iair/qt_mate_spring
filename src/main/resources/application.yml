@@ -1,9 +1,9 @@
 spring:
     datasource:
-        url: 
+        url: -
         driverClassName: org.mariadb.jdbc.Driver
-        username: 
-        password: 
+        username: -
+        password: -
     devtools:
         livereload:
             enabled: true

@@ -25,29 +25,24 @@ public class DashboardController {
         MyQtDTO myQtDTO = new MyQtDTO();
         MyPrayerDTO myPrayerDTO = new MyPrayerDTO();
         String id = "test";
-        // try{
-        //     qtDTO = dasboardService.getQt();
-        //     jsonData.put("verse",qtDTO.getVerse());
-        // }catch(NullPointerException e){
-        //     Document html = Jsoup.connect("https://sum.su.or.kr:8888/bible/today").get();
-        //     String verse = html.select(".bibleinfo_box").get(0).text();
-        //     int cutIndex = verse.indexOf('찬');
-        //     verse = verse.substring(5,cutIndex-1);
-        //     dasboardService.addQt(verse);
-        //     jsonData.put("verse", verse);
-        // }
-        // try{
-        //     myQtDTO = dasboardService.getMyQt(id);
-        //     jsonData.put("apply",myQtDTO.getContent());
-        // }catch(NullPointerException e){
-        //     jsonData.put("apply", "");
-        // }
-        // try{
-        //     myPrayerDTO = dasboardService.getMyPrayer(id);
-        //     jsonData.put("prayer",myPrayerDTO.getContent());
-        // }catch(NullPointerException e){
-        //     jsonData.put("prayer", "");
-        // }
-        return "성공";
+        try{
+            qtDTO = dasboardService.getQt();
+            jsonData.put("verse",qtDTO.getVerse());
+        }catch(NullPointerException e){
+            jsonData.put("verse", "");
+        }
+        try{
+            myQtDTO = dasboardService.getMyQt(id);
+            jsonData.put("apply",myQtDTO.getContent());
+        }catch(NullPointerException e){
+            jsonData.put("apply", "");
+        }
+        try{
+            myPrayerDTO = dasboardService.getMyPrayer(id);
+            jsonData.put("prayer",myPrayerDTO.getContent());
+        }catch(NullPointerException e){
+            jsonData.put("prayer", "");
+        }
+        return jsonData.toString();
     }
 }

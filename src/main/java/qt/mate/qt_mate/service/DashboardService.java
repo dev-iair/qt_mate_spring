@@ -7,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 import qt.mate.qt_mate.mapper.DashboardMapper;
 import qt.mate.qt_mate.model.MyPrayerDTO;
 import qt.mate.qt_mate.model.MyQtDTO;
-import qt.mate.qt_mate.model.QtDTO;
 
 @Service
 @Transactional
@@ -18,10 +17,6 @@ public class DashboardService {
 
     public void addQt(String verse) {
         dashboardMapper.addQt(verse);
-    }
-
-    public QtDTO getQt() {
-        return dashboardMapper.getQt();
     }
 
     public MyPrayerDTO getMyPrayer(String id) {

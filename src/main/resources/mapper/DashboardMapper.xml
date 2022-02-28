@@ -4,9 +4,6 @@
 	<insert id="addQt">
 		insert into qt (verse) values (#{verse});
 	</insert>
-	<select id="getQt" resultType="QtDTO">
-		select * from qt where date = curdate();
-	</select>
 	<select id="getMyQt" resultType="MyQtDTO">
 		select * from my_qt where date=curdate() and id=#{id};
 	</select>
